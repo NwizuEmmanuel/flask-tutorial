@@ -4,5 +4,12 @@
 {% endblock %}
 
 {% block content %}
+{% with messages =get_flashed_messages() %}
+{% if messages %}
+{% endif %}
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endwith %}
 <h2>Welcome {{username}}</h2>
 {% endblock %}

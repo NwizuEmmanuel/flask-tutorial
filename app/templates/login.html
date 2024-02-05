@@ -3,6 +3,15 @@
 Login
 {% endblock %}
 {% block content %}
+
+{% with messages =get_flashed_messages() %}
+{% if messages %}
+{% endif %}
+{% for message in messages %}
+<p>{{message}}</p>
+{% endfor %}
+{% endwith %}
+
 <form action="#" method="post">
     <input type="text" name="usrname" id="username_id" class="form-control w-25 m-2" placeholder="Enter username">
     <input type="submit" value="submit" class="btn btn-secondary m-2">
